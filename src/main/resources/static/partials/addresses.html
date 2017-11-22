@@ -1,0 +1,40 @@
+
+
+<table class="table table-hover">
+	<tr></tr>
+	<tr>
+		<th>Id</th>
+		<th>Username</th>
+		<th>Address</th>
+		<th>Duzenle</th>
+		<th>Sil</th>
+	</tr>
+	<tr ng-repeat="address in addresses">
+		<form name="myForm" class="form-horizontal">
+			<td><input type="text" ng-model="address.id" id="id"
+				class="id form-control" readonly /></td>
+			<td><input type="text" ng-model="address.user.firstname" readonly
+				id="firstname" class="username form-control" /></td>
+			<td><input type="text" ng-model="address.address"
+				id="address" class="lastname form-control" /></td>
+			<td><button type="button"
+					ng-click="updateAddress(address.user.id,address.id,address)"
+					class="btn btn-primary">Duzenle</button></td>
+			<td><button type="button"
+					ng-click="deleteAddress(address.user.id,address.id)" class="btn btn-danger">Sil</button></td>
+
+		</form>
+
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td><input type="text" ng-model="address.address" id="address"
+			class="username form-control" /></td>
+
+
+		<td><button type="button" ng-click="createAddress(userId,address)"
+				class="btn btn-success">Ekle</button></td>
+		<td></td>
+	</tr>
+</table>
